@@ -1,0 +1,573 @@
+<div class="col-md-4 text-center animate-box">
+		<div class="staff" class="staff-img" style="background-image: url(<?php echo $url;?>);">
+			<a href="#" class="desc">
+				<h3><?php the_title();?></h3>
+				<span>Software Engineer</span>
+				<div class="parag">
+					<p><?php the_content();?></p>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+
+
+
+USE OF DEFINE FUNCTION
+
+function require_wp_db() {
+	global $wpdb;
+
+	require_once( ABSPATH . WPINC . '/wp-db.php' );
+	if ( file_exists( WP_CONTENT_DIR . '/db.php' ) )
+		require_once( WP_CONTENT_DIR . '/db.php' );
+
+	if ( isset( $wpdb ) )
+		return;
+
+	$wpdb = new wpdb( DB_USER, DB_PASSWORD, DB_NAME, DB_HOST );
+}
+
+
+
+	<?php 
+		    $args = array(
+		                 'post_type'=>'slider',
+		                 'posts_per_page'=>3
+		                  );
+		    $query = new WP_Query($args);
+		    $i=0;
+			if($query->have_posts()): 
+		?>
+		</aside>
+		<aside id="spinybab-hero">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			   <ol class="carousel-indicators">
+			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousel" data-slide-to="1"></li>
+			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			  </ol> 
+
+			  <!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+				    <div class="item active">
+				        <img src="<?php echo $url; ?>" style="width:100%;">
+				        <div class="carousel-caption">
+				          <h3><?php the_title();?></h3>
+				          <p><?php get_post_meta( $post->ID, 'spinybabbler_slider_meta_field', false ); ?></p>
+				        </div>
+				    </div>
+				    <?php
+				    endwhile;
+				    ?>
+
+			  	</div>
+				
+
+			  <!-- Left and right controls -->
+			  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</aside>
+		<?php 
+			endif;
+		?>   	
+
+
+
+		<aside id="spinybab-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(<?php echo get_template_directory_uri();?>/images/img_bg_1.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Providing all Kinds of IT Services</h2>
+				   					<h1>Technology Spaces For You</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<!-- <li style="background-image: url(images/img_bg_2.jpg);"> -->
+			   		<li>
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>High Quality And Latest Technology</h2>
+				   					<h1>High Class Website and Software</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<!-- <li style="background-image: url(images/img_bg_3.jpg);"> -->
+			   		<li>
+			   		<div class="overlay"></div>
+			   		<div class="container-fluids">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>We Design All Kinds of Software</h2>
+				   					<h1>We Build the Software And mobile App </h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   		
+			  	</ul>
+		  	</div>
+		</aside>
+
+		<div id="spinybab-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-push-4 animate-box spinybab-heading animate-box">
+						<span class="sm">Welcome!</span>
+						<h2><span class="thin">Secrets of Success</span> <span class="thick">of Our Projects</span></h2>
+					</div>
+					<div class="col-md-4 col-md-pull-4 animate-box">
+						<div class="box text-center">
+							<span class="num">10</span>
+							<span class="yr">Years</span>
+							<span class="thin">Experience</span>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<p>Since 2008 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="spinybab-project">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box spinybab-heading animate-box">
+						<span class="sm">Works</span>
+						<h2><span class="thin">Our Done</span> <span class="thick">Projects</span></h2>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+						<p><a href="work.html">View All Projects <i class="icon-arrow-right3"></i></a></p>
+					</div>
+					<div class="col-md-7 col-md-push-1">
+						<div class="row">
+							<div class="col-md-12 animate-box">
+								<div class="owl-carousel owl-carousel2 project-wrap">
+									<div class="item">
+										<a href=<?php echo get_template_directory_uri();?>"/images/Nepali-Chulo.jpg" class="project image-popup-link" style="background-image: url(images/Nepali-Chulo.jpg);">
+											<div class="desc-t">
+												<div class="desc-tc">
+													<div class="desc">
+														<h3><span><small>1</small></span> Nepali Chulo</h3>
+														<p>Nepali Chulo is an authentic Five Star Newari Resturantat Lazimpath</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="item">
+										<a href=<?php echo get_template_directory_uri();?>"/images/unitedconstructions.jpg"class="project image-popup-link" style="background-image: url(images/unitedconstructions.jpg);">
+											<div class="desc-t">
+												<div class="desc-tc">
+													<div class="desc">
+														<h3><span><small>2</small></span>United Constructions</h3>
+														<p>An Construction Compnay that build civil Structures.</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="item">
+										<a href=<?php echo get_template_directory_uri();?>"/images/NSInternational.jpg" class="project image-popup-link" style="background-image: url(images/NSInternational.jpg);">
+											<div class="desc-t">
+												<div class="desc-tc">
+													<div class="desc">
+														<h3><span><small>3</small></span>NS International</h3>
+														<p>An Manpower Company that Recurits the people at Sinamangal.</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		<div id="spinybab-counter" class="spinybab-counters" style="background-image: url(images/cover_img_1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+				</div>
+				<div class="row">
+					<div class="col-md-3 text-center animate-box">
+						<span class="icon"><i class="flaticon-skyline"></i></span>
+						<span class="spinybab-counter js-counter" data-from="0" data-to="400" data-speed="5000" data-refresh-interval="50">+</span>
+						<span class="spinybab-counter-label">Projects</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="icon"><i class="flaticon-engineer"></i></span>
+						<span class="spinybab-counter js-counter" data-from="0" data-to="50" data-speed="5000" data-refresh-interval="50">+</span>
+						<span class="spinybab-counter-label">Employees</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="icon"><i class="flaticon-architect-with-helmet"></i></span>
+						<span class="spinybab-counter js-counter" data-from="0" data-to="800" data-speed="5000" data-refresh-interval="50">+</span>
+						<span class="spinybab-counter-label">Satisfied Clients</span>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<span class="icon"><i class="flaticon-worker"></i></span>
+						<span class="spinybab-counter js-counter" data-from="0" data-to="15" data-speed="5000" data-refresh-interval="50">+</span>
+						<span class="spinybab-counter-label">Partners</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="spinybab-services" class="spinybab-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box spinybab-heading animate-box">
+						<span class="sm">What We Do?</span>
+						<h2><span class="thin">We Offer</span> <span class="thick">Services</span></h2>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+					</div>
+					<div class="col-md-8">
+						<div class="row">
+							<div class="wrap">
+								<div class="col-md-6 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-engineer"></i>
+										</span>
+										<div class="desc">
+											<h3>Digital Marketing</h3>
+											<p>We proivide the Digital Marketing Services to our client.We are Goggle & facebook certified Organization</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-engineering"></i>
+										</span>
+										<div class="desc">
+											<h3>Branding & Printing</h3>
+											<p>We provide the complete branding and printing solutions for our clients.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="wrap">
+								<div class="col-md-6 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-skyline"></i>
+										</span>
+										<div class="desc">
+											<h3>Web Development</h3>
+											<p> We develope your identity to the internet world. We give your firm a wide range of business.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-crane"></i>
+										</span>
+										<div class="desc">
+											<h3>SEO & Consulting</h3>
+											<p>Get your business more reach by listing your business page in first place in Google Search .</p>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+								<div class="col-md-4 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-sketch"></i>
+										</span>
+										<div class="desc">
+											<h3>Mobile Apps Development</h3>
+											<p>We develope various mobile Apps for both android as well as ios devices.</p>
+											</div>
+									</div>
+								</div>
+								<div class="col-md-4 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-conveyor"></i>
+										</span>
+										<div class="desc">
+											<h3>Custom Software Development</h3>
+											<p>We provide the Software as per the need of our client . We develope software in various platforms, Java, Asp.net, Php, Phython.</p>
+											</div>
+									</div>
+								</div>
+								<div class="col-md-4 animate-box">
+									<div class="services">
+										<span class="icon">
+											<i class="flaticon-conveyor"></i>
+										</span>
+										<div class="desc">
+											<h3>Video Production</h3>
+											<p>We provide vedios solutions , we have latest equipments to develope the vedios,films etc. </p>
+											</div>
+									</div>
+								</div>
+								
+					</div>
+					<div class ="col-md-12">
+						<div class="col-md-4 animate-box">
+							<div class="services">
+								<span class="icon">
+									<i class="flaticon-conveyor"></i>
+								</span>
+								<div class="desc">
+									<h3>IT Supports</h3>
+									<p> We have been providing various IT supports, We provide IT consulting services to our client. </p>
+									</div>
+							</div>
+						</div>
+						<div class="col-md-4 animate-box">
+							<div class="services">
+								<span class="icon">
+									<i class="flaticon-conveyor"></i>
+								</span>
+								<div class="desc">
+									<h3>E-Commerce</h3>
+									<p> We provide our client with ecommerce solutions with local aswellas international payment methods. </p>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="spinybab-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box spinybab-heading animate-box">
+						<span class="sm">Recent Blog</span>
+						<h2><span class="thin">Read</span> <span class="thick">Our Blog</span></h2>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+						<p><a href="blog.html">View All Blog Post <i class="icon-arrow-right3"></i></a></p>
+					</div>
+					<div class="col-md-8">
+						<div class="row">
+							<div class="wrap">
+								<div class="blog-entry animate-box">
+									<a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);"></a>
+									<div class="desc">
+										<span>&mdash; 20 Jan, 2017 </span>
+										<h2><a href="blog.html">Construction was awarded with “The Best Construction Company” prize</a></h2>
+									</div>
+								</div>
+								<div class="blog-entry animate-box">
+									<a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);"></a>
+									<div class="desc">
+										<span>&mdash; 20 Jan, 2017 </span>
+										<h2><a href="blog.html">New Doublered Residence Facility Occupied and Second to Begin this Month</a></h2>
+									</div>
+								</div>
+								<div class="blog-entry animate-box">
+									<a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);"></a>
+									<div class="desc">
+										<span>&mdash; 20 Jan, 2017 </span>
+										<h2><a href="blog.html">New Saint Michael’s College Residence Hall Buzzing with Student Activity</a></h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+
+
+ 		<div id="spinybab-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-push-8 animate-box spinybab-heading animate-box">
+						<span class="sm">Team</span>
+						<h2><span class="thin">Our</span> <span class="thick">Engineers</span></h2>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+					</div>
+					<div class="col-md-8 col-md-pull-4">
+						<div class="row">
+							<div class="wrap-2">
+							    <div class="col-md-6 text-center animate-box">
+									<div class="staff" class="staff-img" style="background-image: url(images/bibek.jpg);">
+							<a href="#" class="desc">
+								<h3>Bibek Subedi</h3>
+								<span>Software Engineer</span>
+								<div class="parag">
+									<p>Even the all-powerful Pointing has no control about the blind texts</p>
+								</div>
+							</a>
+						</div>
+								</div>
+								<div class="col-md-6 text-center animate-box">
+									<div class="staff" class="staff-img" style="background-image: url(images/rupesh.jpg);">
+							<a href="#" class="desc">
+								<h3>Rupesh Singh</h3>
+								<span>Software Engineer</span>
+								<div class="parag">
+									<p>Even the all-powerful Pointing has no control about the blind texts</p>
+								</div>
+							</a>
+						</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="wrap-2">
+							    <div class="col-md-6 text-center animate-box">
+									<div class="staff" class="staff-img" style="background-image: url(images/sudipparajuli.jpg);">
+            							<a href="#" class="desc">
+            								<h3>Sudip Parajuli</h3>
+            								<span>Software Engineer</span>
+            								<div class="parag">
+            									<p>Even the all-powerful Pointing has no control about the blind texts</p>
+            								</div>
+            							</a>
+						            </div>
+								</div>
+							    <div class="col-md-6 text-center animate-box">
+							        <div class="staff" class="staff-img" style="background-image: url(images/dipeshchand.jpg);">
+        							<a href="#" class="desc">
+        								<h3>Dipesh Chand</h3>
+        								<span>Senior QA</span>
+        								<div class="parag">
+        									<p>Even the all-powerful Pointing has no control about the blind texts</p>
+        								</div>
+        							</a>
+					       	</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	
+		<div id="spinybab-testimony" class="spinybab-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box spinybab-heading animate-box">
+						<span class="sm">Testimonial</span>
+						<h2><span class="thin">What Our</span> <span class="thick">Client Says</span></h2>
+					</div>
+					<div class="col-md-7 col-md-push-1">
+						<div class="row animate-box">
+							<span class="icon"><i class="icon-quotes-left"></i></span>
+							<div class="owl-carousel1">
+							    <div class="item">
+									<div class="testimony-slide active">
+										<div class="testimony-wrap">
+											<figure>
+												<img src=<?php echo get_template_directory_uri();?>"/images/Bidroha-bista.jpg" alt="user">
+											</figure>
+											<blockquote>
+												<span>Bidroha Prakash Bista</span>
+												<p> Finding the right partner to help make this goal a reality was key
+												We wanted to change the way men view and purchase their grooming products online and we knew we needed to channel the power of the Internet to achieve this goal. Finding the right partner to help make this goal a reality was key. The smart and creative team at Spiny Babbler has helped nepalichulo.com.np establish itself as a successful online business and become synonymous with an enjoyable,their extensive internet experience and passion has helped to turn our vision into a reality. </p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active">
+										<div class="testimony-wrap">
+											<figure>
+												<img src=<?php echo get_template_directory_uri();?>"/images/ManojKc.jpg" alt="user">
+											</figure>
+											<blockquote>
+												<span>Manoj KC</span>
+												<p>Spiny Babbler came up with the design on their first try, delivered the complete package on a reasonable budget, and continued to fine-tune it. That wasn't enough -- they also created a plan to market the website and increase traffic that is already producing results.</p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active">
+										<div class="testimony-wrap">
+											<figure>
+												<img src=<?php echo get_template_directory_uri();?>"/images/Pawan-kc.jpg" alt="user">
+											</figure>
+											<blockquote>
+												<span>Pawan Kc</span>
+												<p>After 4 problematic years we finally found Spiny Babbler. Up to date it has been a pleasure working with Spiny Babbler.</p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active">
+										<div class="testimony-wrap">
+											<figure>
+												<img src=<?php echo get_template_directory_uri();?>"/images/Rajan.jpg" alt="user">
+											</figure>
+											<blockquote>
+												<span>Rajan Basnet</span>
+												<p>Viva Construction was designed and delivered in less than 4 weeks with design and programming from Spiny Babbler.</p>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div id="spinybab-subscribe">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 spinybab-heading animate-box">
+						<h2>Sign up for a Newsletter</h2>
+						<div class="row">
+							<div class="col-md-7">
+								<p>Enter your email address to get the latest news, events and special offers delivered right to your inbox.</p>
+							</div>
+							<div class="col-md-5">
+								<form class="form-inline qbstp-header-subscribe">
+									<div class="row">
+										<div class="col-md-12 col-md-offset-0">
+											<div class="form-group">
+												<input type="text" class="form-control" id="email" placeholder="Enter your email">
+												<button type="submit" class="btn btn-primary">Subscribe</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
